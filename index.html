@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodLoop - Surplus Food Sharing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <h1>FoodLoop 🍲</h1>
+    <button id="openFormBtn" class="btn-primary">+ Post Surplus Food</button>
+  </header>
+
+  <!-- Dashboard Section (Member 4 Area) -->
+  <section id="stats" class="stats-container"></section>
+
+  <!-- Filters Section -->
+  <section id="filters" class="filters-container">
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="Cooked">Cooked</option>
+      <option value="Packaged">Packaged</option>
+      <option value="Fresh Produce">Fresh Produce</option>
+      <option value="Bakery">Bakery</option>
+    </select>
+    <label>
+      <input type="checkbox" id="availableOnlyCheck"> Available Only
+    </label>
+  </section>
+
+  <!-- Card Grid Container (Member 1 Area) -->
+  <main id="listings" class="food-grid"></main>
+
+  <!-- Form Modal Container (Member 2 Area) -->
+  <div id="formModal" class="modal"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="render.js"></script>
+  <script src="form.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
