@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoodLoop - Surplus Food Sharing</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLoop - Surplus Food Sharing</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>FoodLoop</h1>
+        <button id="openModalBtn" class="post-btn">+ Post Surplus Food</button>
+    </header>
 
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <h1>FoodLoop 🍲</h1>
-    <button id="openFormBtn" class="btn-primary">+ Post Surplus Food</button>
-  </header>
+    <main>
+        <!-- Search and Filter Controls -->
+        <div class="controls-container">
+            <input type="text" id="searchInput" placeholder="Search food items or location..." class="search-input">
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Bakery">Bakery</button>
+                <button class="filter-btn" data-category="Meals">Meals</button>
+                <button class="filter-btn" data-category="Produce">Produce</button>
+            </div>
+        </div>
 
-  <!-- Dashboard Section (Member 4 Area) -->
-  <section id="stats" class="stats-container"></section>
+        <section class="listings-container" id="listingsContainer">
+            <!-- Dynamic food cards or empty state will appear here -->
+        </section>
+    </main>
 
-  <!-- Filters Section -->
-  <section id="filters" class="filters-container">
-    <select id="categoryFilter">
-      <option value="">All Categories</option>
-      <option value="Cooked">Cooked</option>
-      <option value="Packaged">Packaged</option>
-      <option value="Fresh Produce">Fresh Produce</option>
-      <option value="Bakery">Bakery</option>
-    </select>
-    <label>
-      <input type="checkbox" id="availableOnlyCheck"> Available Only
-    </label>
-  </section>
+    <!-- Modal Container -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="close-btn">&times;</button>
+            <h2>Post Surplus Food</h2>
+            <form id="foodForm">
+                <input type="text" id="titleInput" placeholder="Food Title" required>
+                <input type="text" id="quantityInput" placeholder="Quantity (e.g., 5 meals)" required>
+                <input type="text" id="locationInput" placeholder="Location" required>
+                <input type="text" id="categoryInput" placeholder="Category (e.g., Bakery, Meals, Produce)" required>
+                <button type="submit" class="submit-btn">Submit Listing</button>
+            </form>
+        </div>
+    </div>
 
-  <!-- Card Grid Container (Member 1 Area) -->
-  <main id="listings" class="food-grid"></main>
-
-  <!-- Form Modal Container (Member 2 Area) -->
-  <div id="formModal" class="modal"></div>
-
-  <!-- Scripts -->
-  <script src="data.js"></script>
-  <script src="render.js"></script>
-  <script src="form.js"></script>
-  <script src="dashboard.js"></script>
+    <script src="form.js"></script>
 </body>
 </html>
