@@ -9,7 +9,7 @@ function renderListings(list) {
 
   list.forEach(item => {
     const card = document.createElement('div');
-    card.className = food-card ${item.status};
+   card.className = `food-card ${item.status}`;
     
     card.innerHTML = `
       <h3>${item.title}</h3>
@@ -17,7 +17,7 @@ function renderListings(list) {
       <p><strong>Location:</strong> ${item.location}</p>
       <span class="badge category">${item.category}</span>
       <span class="badge status">${item.status}</span>
-      ${item.status === 'available' ? <button class="claim-btn" data-id="${item.id}">Claim</button> : ''}
+            ${item.status === 'available' ? `<button class="claim-btn" data-id="${item.id}">Claim</button>` : ''}
     `;
 
     container.appendChild(card);
